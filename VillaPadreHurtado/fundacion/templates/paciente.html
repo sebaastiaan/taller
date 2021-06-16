@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p></p>
+<style>
+    .datos{
+        text-align: center;        
+    }
+
+    .jumbotron{
+        text-align: center;
+    }
+</style>
+<div class="jumbotron">
+    <p class="datos">{{paciente.nombre}}</p>
+    <p class="datos" >{{paciente.apellido_paterno}}</p>
+    <p class="datos">{{paciente.apellido_materno}}</p>
+    <p class="datos">{{paciente.fecha_nacimiento}}</p>
+    <p class="datos">{{paciente.sexo}}</p>
+    <p class="datos">{{paciente.peso}}</p>
+    <p class="datos">{{paciente.estatura}}</p>
+    <p class="datos">{{paciente.telefono}}</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg" href="/paciente/{{ paciente.id }}/update" role="button">Actualizar</a>
+    <a class="btn btn-primary btn-lg" href="/paciente/{{ paciente.id }}/delete" role="button">Borrar</a>
+</div>
+{% endblock %}
