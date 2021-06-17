@@ -4,3 +4,21 @@ h1{
 h2{
     color: blue;
 }
+
+footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:50px;
+    width:100%;
+    background:#364591;
+}
+footer p{
+    color: white;
+}
+footer a{
+    color: red;
+}
+.navbar{
+    background-color: #ff6051 !important;
+}

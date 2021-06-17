@@ -1,10 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% load static %}
 <h1 style="text-align: center;">Bienvenido a la Fundacion Villa Padre Hurtado</h1>
 <br>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{% static 'imagenes/villa-02.jpg' %}" alt="First slide" height="480" width="500">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{% static 'imagenes/sector-villa.png' %}" alt="Second slide" height="480" width="500">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{% static 'imagenes/villa-03.jpg' %}" alt="Third slide" height="480" width="500">
+      </div>
+    </div>
+  </div>
 <br>
 {% if  not user.is_authenticated %}
-    <p>Para acceder al sistema debes ingresar tu usuario y clave o registrarte.</p>
+    <p style="text-align: center;">Para acceder al sistema debes ingresar tu usuario y clave o registrarte.</p>
 {% endif %}
 {% endblock %}
