@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="{% url 'index' %}"><img src="https://www.villapadrehurtado.cl/wp-content/uploads/2021/02/logo-somos-villa-460-pro.png" width="100" height="80" alt="Villa Padre Hurtado"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            {% if user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="/pacientes">Pacientes<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
+                </li>
+        </ul>
+        <span class="navbar-text">
+            {{ user.username }}
+        </span>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'signup' %}">Registrarse</a>
+            </li>
+        </ul>
+        {% endif %}
+    </div>
+</nav>
